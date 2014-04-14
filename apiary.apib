@@ -4,50 +4,82 @@ HOST: http://www.sbir.gov/api/
 # SBIR.GOV API
 Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) solicitations and awards.
 
-# Group Solicitations [/solicitations.{content_type}{?keyword,agency,open,closed}]
+# GET /solicitations.{content_type}{?keyword,agency,open,closed}
 SBIR and STTR solicitations as JSON
+
++ Parameters
+    + content_type (required, text) ... Content type of the response. Valid values are [```json```, ```csv``` and ```xml```]
+    + keyword (optional, text)  ... Keywords entered in the topic description
+    + agency (optional, text)
+        
+        Agency to return. Valid values are 
+        
+        > ```DOD``` = Dept. of Defense
+        >
+        > ```HHS``` = Dept. of Health and Human Services
+        >
+        > ```NASA``` = National Aeronautics and Space Administration
+        >
+        > ```NSF``` = National Science Foundation
+        >
+        > ```DOE``` = Dept. of Energy
+        >
+        > ```USDA``` = United States Dept. of Agriculture
+        >
+        > ```EPA``` = Environmental Protection Agency
+        >
+        > ```DOC``` = Dept. of Commerce
+        >
+        > ```ED``` = Dept. of Education
+        >
+        > ```DOT``` = Dept. of Transportation
+        >
+        > ```DHS``` = Dept. of Homeland Security
+    
+    + open (number, 1) ... ```1``` if solicitation should be currently open, ```0``` otherwise
+    + closed (number, 0) ... ```1``` if solicitation should be currently open, ```0``` otherwise
 
 + Response 200 (application/json)
 
-    {
-      "0": {
-        "id": 361509,
-        "title": "New Technology for Proteomics and Glycomics",
-        "link": "http://www.sbir.gov/node/361509",
-        "description": "Some description",
-        "agency": "HHS",
-        "release_date": 20110519,
-        "open_date": "20110705",
-        "close_date": "20140508",
-        "days_to_close": 16,
-        "status": "Open/Future"
-      },
-      "1": {
-        "id": 361511,
-        "title": "New Technology for Proteomics and Glycomics",
-        "link": "http://www.sbir.gov/node/361511",
-        "description": "some description",
-        "agency": "HHS",
-        "release_date": 20110519,
-        "open_date": "20110705",
-        "close_date": "20140508",
-        "days_to_close": 16,
-        "status": "Open/Future"
-      },
-      "2": {
-        "id": 361465,
-        "title": "NINDS SBIR Technology Transfer",
-        "link": "http://www.sbir.gov/node/361465",
-        "description": "Some description",
-        "agency": "HHS",
-        "release_date": 20110922,
-        "open_date": "20111105",
-        "close_date": "20140908",
-        "days_to_close": 31,
-        "status": "Open/Future"
-      },
-      "numFound": 3
-    }
+        {
+          "0": {
+            "id": 361509,
+            "title": "New Technology for Proteomics and Glycomics",
+            "link": "http://www.sbir.gov/node/361509",
+            "description": "Some description",
+            "agency": "HHS",
+            "release_date": 20110519,
+            "open_date": "20110705",
+            "close_date": "20140508",
+            "days_to_close": 16,
+            "status": "Open/Future"
+          },
+          "1": {
+            "id": 361511,
+            "title": "New Technology for Proteomics and Glycomics",
+            "link": "http://www.sbir.gov/node/361511",
+            "description": "some description",
+            "agency": "HHS",
+            "release_date": 20110519,
+            "open_date": "20110705",
+            "close_date": "20140508",
+            "days_to_close": 16,
+            "status": "Open/Future"
+          },
+          "2": {
+            "id": 361465,
+            "title": "NINDS SBIR Technology Transfer",
+            "link": "http://www.sbir.gov/node/361465",
+            "description": "Some description",
+            "agency": "HHS",
+            "release_date": 20110922,
+            "open_date": "20111105",
+            "close_date": "20140908",
+            "days_to_close": 31,
+            "status": "Open/Future"
+          },
+          "numFound": 3
+        }
 
 
 # Group Awards [/awards.json]
