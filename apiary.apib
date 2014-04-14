@@ -5,10 +5,18 @@ HOST: http://www.sbir.gov/api/
 Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) solicitations and awards.
 
 # GET /solicitations.{content_type}{?keyword,agency,open,closed}
-SBIR and STTR solicitations as JSON
+Returns **open** SBIR and STTR solicitations
 
 + Parameters
-    + content_type (required, string) ... Content type of the response. 
+    + content_type (required, string) 
+    
+        Content type of the response. 
+    
+        > ```json``` = Javascript Object Notation formatted response
+        >
+        > ```xml``` = Extensible Markup Language formatted response
+        >
+        > ```csv``` = Comma-separated Value formatted response
     
         + Values
             + `json`
@@ -55,9 +63,15 @@ SBIR and STTR solicitations as JSON
             + `DOT`
             + `DHS`
     
-    + open (optional) ... Presence of this parameter indicates that a solicitation is still open for industry response. **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.
-
-    + closed (optional) ... Presence of this parameter indicates that a solicitation is **no longer** open for industry response. **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.
+    + open (optional) 
+    
+        Presence of this parameter returns only solicitation that are open *or* will open some time in the future for industry response.
+        <p> **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.</p>
+        
+    + closed (optional) 
+    
+        Presence of this parameter returns only solicitations **closed** to industry response.
+        <p> **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.</p>
 
 + Response 200 (application/json)
 
@@ -100,7 +114,6 @@ SBIR and STTR solicitations as JSON
           },
           "numFound": 3
         }
-
 
 # Group Awards [/awards.json]
 SBIR and STTR awards
