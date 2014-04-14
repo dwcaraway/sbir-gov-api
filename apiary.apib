@@ -1,0 +1,102 @@
+FORMAT: 1A
+HOST: http://www.sbir.gov/api/
+
+# SBIR.GOV API
+Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) solicitations and awards.
+
+# Group Solicitations [/solicitations.{content_type}{?keyword,agency,open,closed}]
+SBIR and STTR solicitations as JSON
+
++ Response 200 (application/json)
+
+    {
+      "0": {
+        "id": 361509,
+        "title": "New Technology for Proteomics and Glycomics",
+        "link": "http://www.sbir.gov/node/361509",
+        "description": "Some description",
+        "agency": "HHS",
+        "release_date": 20110519,
+        "open_date": "20110705",
+        "close_date": "20140508",
+        "days_to_close": 16,
+        "status": "Open/Future"
+      },
+      "1": {
+        "id": 361511,
+        "title": "New Technology for Proteomics and Glycomics",
+        "link": "http://www.sbir.gov/node/361511",
+        "description": "some description",
+        "agency": "HHS",
+        "release_date": 20110519,
+        "open_date": "20110705",
+        "close_date": "20140508",
+        "days_to_close": 16,
+        "status": "Open/Future"
+      },
+      "2": {
+        "id": 361465,
+        "title": "NINDS SBIR Technology Transfer",
+        "link": "http://www.sbir.gov/node/361465",
+        "description": "Some description",
+        "agency": "HHS",
+        "release_date": 20110922,
+        "open_date": "20111105",
+        "close_date": "20140908",
+        "days_to_close": 31,
+        "status": "Open/Future"
+      },
+      "numFound": 3
+    }
+
+
+# Group Awards [/awards.json]
+SBIR and STTR awards
+
+## GET /awards.json{?keyword,company,ri,year}
+Award queries
+
++ Parameters
+    + keyword (optional, text)  ... Keywords entered in the topic description
+    
++ Response 200 (application/json)
+
+        {
+          "0": {
+            "id": 410031,
+            "title": "Tailoring Titanium Microstructures for Reduced Oxygen Ingress during High Temperature Applications using a Novel Microstructure-Informatics Approach",
+            "link": "http://www.sbir.gov/sbirsearch/detail/410031",
+            "abstract": "ABSTRACT:  High temperature applications of titanium alloys are limited by their affinity to oxygen...",
+            "agency": "USAF",
+            "program": "SBIR",
+            "phase": 2,
+            "year": 2013,
+            "company": "MRL Materials Resources LLC",
+            "ri": ""
+          },
+          "1": {
+            "id": 410007,
+            "title": "Autonomous On-Board Control of Satellites for Space Superiority",
+            "link": "http://www.sbir.gov/sbirsearch/detail/410007",
+            "abstract": "ABSTRACT:  Future spacecraft could benefit from onboard planning and scheduling autonomy to effectively fulfill their missions...",
+            "agency": "USAF",
+            "program": "SBIR",
+            "phase": 2,
+            "year": 2013,
+            "company": "Orbit Logic Incorporated",
+            "ri": ""
+          },
+          "2": {
+            "id": 409047,
+            "title": "Naturalistic Neurocognitive Assessment Using Mobile Gaming Platforms",
+            "link": "http://www.sbir.gov/sbirsearch/detail/409047",
+            "abstract": "The neurocognitive health of U.S. service members plays a vital role in the defense of the United States...",
+            "agency": "ARMY",
+            "program": "STTR",
+            "phase": 1,
+            "year": 2013,
+            "company": "Vista Partners LLC",
+            "ri": "Institute for Creative Technologies"
+          },
+          "numFound": 3
+        }
