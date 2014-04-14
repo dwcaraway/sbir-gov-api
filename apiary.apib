@@ -8,12 +8,18 @@ Small Business Innovation Research (SBIR) and Small Business Technology Transfer
 SBIR and STTR solicitations as JSON
 
 + Parameters
-    + content_type (required, text) ... Content type of the response. Valid values are [```json```, ```csv``` and ```xml```]
-    + keyword (optional, text)  ... Keywords entered in the topic description
-    + agency (optional, text)
+    + content_type (required, string) ... Content type of the response. 
+    
+        + Values
+            + `json`
+            + `xml`
+            + `csv`
         
-        Agency to return. Valid values are 
+    + keyword (optional, string)  ... Keywords entered in the topic description
+    + agency (optional, string)
         
+        Agency to return.
+
         > ```DOD``` = Dept. of Defense
         >
         > ```HHS``` = Dept. of Health and Human Services
@@ -35,9 +41,23 @@ SBIR and STTR solicitations as JSON
         > ```DOT``` = Dept. of Transportation
         >
         > ```DHS``` = Dept. of Homeland Security
+        
+        + Values
+            + `DOD`
+            + `HHS`
+            + `NASA`
+            + `NSF`
+            + `DOE`
+            + `USDA`
+            + `EPA`
+            + `DOC`
+            + `ED`
+            + `DOT`
+            + `DHS`
     
-    + open (number, 1) ... ```1``` if solicitation should be currently open, ```0``` otherwise
-    + closed (number, 0) ... ```1``` if solicitation should be currently open, ```0``` otherwise
+    + open (optional) ... Presence of this parameter indicates that a solicitation is still open for industry response. **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.
+
+    + closed (optional) ... Presence of this parameter indicates that a solicitation is **no longer** open for industry response. **Note:** Use of `open` and `closed` parameters on the same query will return 0 results.
 
 + Response 200 (application/json)
 
