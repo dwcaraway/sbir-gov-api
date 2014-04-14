@@ -1,3 +1,3 @@
-dredd apiary.apib http:///
+dredd apiary.apib http://www.sbir.gov/
 RESULT=$?
 exit $RESULT
